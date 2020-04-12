@@ -28,7 +28,7 @@ def read_file(file: AnyStr) -> pd.DataFrame:
 def load_all_files_and_store_parquet():
     for loaded_file in download_al_files():
         if "FRAC" not in loaded_file:
-            df = read_file(loaded_file.decode("utf-8").split('\n'))
+            df = read_file(loaded_file)
             df['dt'] = df['date'].dt.date
             df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
             pq.write_to_dataset(pa.Table.from_pandas(df), './data/parsed', partition_cols=['dt', 'mdSymbol'],
