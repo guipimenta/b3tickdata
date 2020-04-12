@@ -1,0 +1,18 @@
+date: datetime64
+mdSymbol: str
+tradeNumber: float64
+tp: float64
+ts: float64
+timestamp: datetime64
+tradeStatus: int64 # 1=active // 2=cancelled
+bidDate: datetime64
+bidNumber: int64
+bidGenerationId: float64
+bidCondition: int64 # 0=passive, 1=aggressive, 2=was taken by the other side
+offerDate: datetime64
+offerNumber: float64
+offerGenerationId: float64
+offerCondition: int64
+crossIndicator: int64 # 1=intetional, 0=not-intentional
+bidBroker: int64
+askBroker: int64
