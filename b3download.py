@@ -19,7 +19,7 @@ def download_b3_file(filename: str) -> [str]:
             archive = BytesIO(r.read())
             arquive_7z = py7zlib.Archive7z(archive)
             return decode(arquive_7z.getmember(0).read())
-        elif 'gzip' in filename:
+        elif 'gz' in filename:
             with gzip.open(r) as zip_file:
                 return decode(zip_file.read())
         else:
